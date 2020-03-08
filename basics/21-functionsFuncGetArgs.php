@@ -1,5 +1,14 @@
 <?php
-function add($num1, $num2, $num3){
-    return $num1 + $num2 + $num3;
+function add(){
+    $total = 0;
+
+    foreach(func_get_args() as $number){
+        if(!is_numeric($number)){
+        continue;
+        }
+
+        $total += $number;
+    }
+    return $total;
 }
-echo add(5, 5, 10);
+echo add(5, 10, 15);
